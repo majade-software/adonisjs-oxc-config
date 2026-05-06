@@ -122,7 +122,6 @@ export const RULES_LIST: OxlintRules = {
   'valid-typeof': ['error', { requireStringLiterals: true }],
 
   '@stylistic/brace-style': ['error', '1tbs'],
-  '@stylistic/comma-dangle': ['error', 'always-multiline'],
   '@stylistic/eol-last': ['error', 'always'],
   '@stylistic/indent': 'off',
   '@stylistic/max-len': [
