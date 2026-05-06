@@ -31,7 +31,7 @@ For a TypeScript package/library, use `configPkg()` instead:
 
 ```ts
 // oxlint.config.ts
-import { configPkg } from '@majade-software/adonisjs-oxc-config'
+import { configPkg } from '@majade-software/adonisjs-oxc-config/oxlint'
 
 export default configPkg()
 ```
@@ -42,7 +42,7 @@ Create an `oxfmt.config.ts` file:
 
 ```ts
 // oxfmt.config.ts
-import { configOxfmt } from '@majade-software/adonisjs-oxc-config'
+import { configOxfmt } from '@majade-software/adonisjs-oxc-config/oxfmt'
 
 export default configOxfmt()
 ```
