@@ -13,7 +13,6 @@
     "url": "https://github.com/majade-software/adonisjs-oxc-config/issues"
   },
   "license": "MIT",
-  "author": "",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/majade-software/adonisjs-oxc-config.git"
@@ -33,10 +32,6 @@
       "types": "./dist/oxfmt.d.mts",
       "default": "./dist/oxfmt.mjs"
     }
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
   },
   "scripts": {
     "lint": "oxlint",
@@ -71,6 +66,10 @@
     }
   },
   "packageManager": "pnpm@10.29.3",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "release-it": {
     "git": {
       "requireCleanWorkingDir": true,
