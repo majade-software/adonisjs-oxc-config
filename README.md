@@ -22,7 +22,7 @@ Create an `oxlint.config.ts` file (or update your existing one):
 
 ```ts
 // oxlint.config.ts
-import { configApp } from '@majade-software/adonisjs-oxc-config'
+import { configApp } from '@majade-software/adonisjs-oxc-config/oxlint'
 
 export default configApp()
 ```
