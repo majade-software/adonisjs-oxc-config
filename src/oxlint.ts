@@ -72,6 +72,37 @@ export const RULES_LIST: OxlintRules = {
   'no-ex-assign': ['error'],
   'no-extra-boolean-cast': ['error'],
   'no-fallthrough': ['error'],
+
+  /**
+   * Knex query builder return a promise but safe to ignore
+   * as they are not executed until you call `.exec()` or similar method.
+   * Thanks to @Julien-R44 : https://github.com/Julien-R44/tooling-configs/blob/main/src/oxc/lint.ts#L22
+   */
+  '@typescript-eslint/no-floating-promises': [
+    'error',
+    {
+      allowForKnownSafePromises: [
+        {
+          from: 'package',
+          package: '@adonisjs/lucid',
+          name: [
+            'ExcutableQueryBuilderContract',
+            'ModelQueryBuilderContract',
+            'DatabaseQueryBuilderContract',
+            'InsertQueryBuilderContract',
+            'RawQueryBuilderContract',
+            'ChainableContract',
+            'RelationQueryBuilderContract',
+            'RelationSubQueryBuilderContract',
+            'HasManyQueryBuilderContract',
+            'HasManyThroughQueryBuilderContract',
+            'ManyToManyQueryBuilderContract',
+            'ManyToManySubQueryBuilderContract',
+          ],
+        },
+      ],
+    },
+  ],
   'no-inner-declarations': ['error'],
   'no-invalid-regexp': ['error', { allowConstructorFlags: ['u', 'y'] }],
   'no-irregular-whitespace': ['error'],
