@@ -22,18 +22,18 @@ Create an `oxlint.config.ts` file (or update your existing one):
 
 ```ts
 // oxlint.config.ts
-import { configApp } from "@majade-software/adonisjs-oxc-config";
+import { configApp } from '@majade-software/adonisjs-oxc-config'
 
-export default configApp();
+export default configApp()
 ```
 
 For a TypeScript package/library, use `configPkg()` instead:
 
 ```ts
 // oxlint.config.ts
-import { configPkg } from "@majade-software/adonisjs-oxc-config";
+import { configPkg } from '@majade-software/adonisjs-oxc-config'
 
-export default configPkg();
+export default configPkg()
 ```
 
 ### 3) Replace Prettier config
@@ -42,9 +42,9 @@ Create an `oxfmt.config.ts` file:
 
 ```ts
 // oxfmt.config.ts
-import { configOxfmt } from "@majade-software/adonisjs-oxc-config";  
+import { configOxfmt } from '@majade-software/adonisjs-oxc-config'
 
-export default configOxfmt();
+export default configOxfmt()
 ```
 
 ### 4) Migrate NPM scripts
