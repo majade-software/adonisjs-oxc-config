@@ -42,7 +42,7 @@
     "lint": "oxlint",
     "format": "oxfmt --write .",
     "build": "tsdown",
-    "release": "pnpm build && release-it --ci",
+    "release": "pnpm build && release-it",
     "typecheck": "tsc --noEmit",
     "checks": "pnpm typecheck && pnpm lint"
   },

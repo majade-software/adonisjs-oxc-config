@@ -24,8 +24,6 @@ jobs:
         with:
           node-version: 24
           cache: pnpm
-          registry-url: https://registry.npmjs.org
-          scope: '@majade-software'
 
       - name: git config
         run: |
@@ -33,9 +31,9 @@ jobs:
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
       - name: Init npm auth
-        run: npm config set //registry.npmjs.org/:_authToken $NODE_AUTH_TOKEN
+        run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - run: corepack enable
         env:
@@ -43,8 +41,9 @@ jobs:
 
       - run: pnpm install
 
-      - run: pnpm release
+      - run: pnpm release -- --ci
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
