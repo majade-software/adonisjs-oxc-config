@@ -70,6 +70,7 @@
       "optional": true
     }
   },
+  "packageManager": "pnpm@10.29.3",
   "release-it": {
     "git": {
       "requireCleanWorkingDir": true,
