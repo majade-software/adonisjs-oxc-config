@@ -1,0 +1,95 @@
+{
+  "name": "@majade-software/adonisjs-oxc-config",
+  "version": "1.0.0",
+  "description": "Oxlint and Oxfmt presets for AdonisJS packages and applications",
+  "keywords": [
+    "adonisjs",
+    "oxc",
+    "oxfmt",
+    "oxlint"
+  ],
+  "homepage": "https://github.com/majade-software/adonisjs-oxc-config#readme",
+  "bugs": {
+    "url": "https://github.com/majade-software/adonisjs-oxc-config/issues"
+  },
+  "license": "MIT",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majade-software/adonisjs-oxc-config.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/oxlint.mjs",
+  "types": "./dist/oxlint.d.mts",
+  "exports": {
+    "./oxlint": {
+      "types": "./dist/oxlint.d.mts",
+      "default": "./dist/oxlint.mjs"
+    },
+    "./oxfmt": {
+      "types": "./dist/oxfmt.d.mts",
+      "default": "./dist/oxfmt.mjs"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "lint": "oxlint",
+    "format": "oxfmt --write .",
+    "build": "tsdown",
+    "release": "pnpm build && release-it --ci",
+    "typecheck": "tsc --noEmit",
+    "checks": "pnpm typecheck && pnpm lint"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint-plugin-unicorn": "^64.0.0"
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^11.0.0",
+    "oxfmt": "^0.47.0",
+    "oxlint": "^1.62.0",
+    "release-it": "^20.0.1",
+    "tsdown": "^0.21.10",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "oxfmt": ">=0.47.0",
+    "oxlint": ">=1.62.0"
+  },
+  "peerDependenciesMeta": {
+    "oxfmt": {
+      "optional": true
+    },
+    "oxlint": {
+      "optional": true
+    }
+  },
+  "release-it": {
+    "git": {
+      "requireCleanWorkingDir": true,
+      "requireUpstream": true,
+      "commitMessage": "chore(release): ${version}",
+      "tagAnnotation": "v${version}",
+      "push": true,
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": true,
+      "skipChecks": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+  }
+}
